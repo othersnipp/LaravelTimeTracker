@@ -1,6 +1,6 @@
-/bootstrap/compiled.php
-.env.*.php
-.env.php
-.env
-/node_modules
-/vendor
+time-tracker-2/bootstrap/compiled.php
+time-tracker-2/.env.*.php
+time-tracker-2/.env.php
+time-tracker-2/.env
+time-tracker-2/node_modules
+time-tracker-2/vendor
