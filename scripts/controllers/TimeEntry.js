@@ -7,7 +7,18 @@
         .controller('TimeEntry', TimeEntry);
 
         function TimeEntry(time){
-            var tm = this; // vm is the capture variable
-            tm.timeentries =[];
+            var vm = this; // vm is the capture variable
+            vm.timeentries =[];
+
+            // Below code fetches time entries from static JSON
+            // file, and puts results in the vm. timeentries array.
+            time.getTime().then(
+                function(results){
+                    vm.timeentries = results;
+                    console.log(vm.timeentries);
+                },
+                function(error){
+                    console.log(error);
+                });
         }
 })();
