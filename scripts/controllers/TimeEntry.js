@@ -9,17 +9,22 @@
         function TimeEntry(time){
             var vm = this; // vm is the capture variable
             vm.timeentries =[];
+            vm.totalTime = {};
 
             // Below code fetches time entries from static JSON
             // file, and puts results in the vm. timeentries array.
             time.getTime().then(
                 function(results){
                     vm.timeentries = results;
-                    console.log(vm.timeentries);
+                    updateTotalTime(vm.timeentries);
                 },
                 function(error){
                     console.log(error);
                 }
             );
+
+            function updateTotalTime(timeentries) {
+                vm.totalTime = time.getTotalTime(timeentries);
+            }
         }
 })();
